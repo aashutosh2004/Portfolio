@@ -4,8 +4,10 @@ import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import pdf from "../../Assets/../Assets/TusharNewCv.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
+import { FaPlay } from "react-icons/fa";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ResumeNew() {
@@ -19,7 +21,8 @@ function ResumeNew() {
     <div>
       <Container fluid className="resume-section">
         <Particle />
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        
+        <Row style={{ justifyContent: "center", position: "relative", gap: "1rem" }}>
           <Button
             variant="primary"
             href={pdf}
@@ -28,6 +31,16 @@ function ResumeNew() {
           >
             <AiOutlineDownload />
             &nbsp;Download CV
+          </Button>
+
+          <Button
+            variant="success"
+            href="https://drive.google.com/file/d/1ED2O88aP6ZXkBSdPepxM-daL93DgsYZF/view?usp=sharing"
+            target="_blank"
+            style={{ maxWidth: "250px" }}
+          >
+            <FaPlay />
+            &nbsp;Watch Video CV
           </Button>
         </Row>
 
